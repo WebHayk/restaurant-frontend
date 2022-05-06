@@ -1,0 +1,35 @@
+@import "styles/utils/variables";
+
+.FieldWrapper {
+  width: 100%;
+  position: relative;
+  .FieldWrapper__field {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px $c-grey solid;
+    color: $c-secondary;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    transition: .5s all;
+    &:focus {
+      outline: none;
+      border-color: $c-secondary;
+    }
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $c-secondary;
+      font-weight: 500;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: $c-secondary;
+      font-weight: 500;
+    }
+
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: $c-secondary;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import "styles/utils/variables";
+@import "styles/utils/mixins";
+
+.Button {
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  @include FlexStyles(center, center);
+  border: 2px solid transparent;
+  color: #F6FBF8;
+  @include HoverTransitionStyles;
+  cursor: pointer;
+  &:focus {
+    border-color: #fff;
+  }
+  &:active {
+    @include PressedTransformStyles;
+  }
+}
+
+.Button__black {
+  background: $c-dark;
+  &:hover {
+    background: #2B362F;
+  }
+  &:active {
+    background: #3A493F;
+  }
+  &:focus {
+    @include BoxShadowFocusStyles(#2B362F);
+  }
+}
+
+.Button__green {
+  background: $c-green;
+  &:hover {
+    background: #267D44;
+  }
+  &:active {
+    background: #216D3C;
+  }
+  &:focus {
+    @include BoxShadowFocusStyles(#267D44);
+  }
+}
+
+.Button__large {
+  height: 45px;
+}
+
+.Button__small {
+  height: 40px;
+}

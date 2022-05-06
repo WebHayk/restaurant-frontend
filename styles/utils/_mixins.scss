@@ -1,0 +1,33 @@
+@mixin FlexStyles($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin HoverTransitionStyles {
+  -webkit-transition: all 200ms cubic-bezier(0.08,0.52,0.52,1);
+  -o-transition: all 200ms cubic-bezier(0.08,0.52,0.52,1);
+  transition: all 200ms cubic-bezier(0.08,0.52,0.52,1);
+}
+
+@mixin BoxShadowFocusStyles($color) {
+  box-shadow: 0 0 0 2px $color;
+  -webkit-box-shadow: 0 0 0 2px $color;
+}
+
+@mixin PressedTransformStyles {
+  transform: scale(0.95);
+}
+
+@mixin BaseContainerStyles {
+  padding: 0px 200px!important;
+  @media (max-width: 992px) {
+    padding: 0px 100px!important;
+  }
+  @media (max-width: 768px) {
+    padding: 0px 50px!important;
+  }
+  @media (max-width: 468px) {
+    padding: 0px 20px!important;
+  }
+}

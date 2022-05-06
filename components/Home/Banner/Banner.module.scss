@@ -1,0 +1,41 @@
+@import "styles/utils/mixins";
+
+.Banner {
+  width: 100%;
+  @include FlexStyles(center, flex-start);
+  @include BaseContainerStyles;
+  background-image: url("/main-image.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  .Banner__content {
+    padding: 150px 0;
+    max-width: 450px;
+    .Banner__title {
+      line-height: 132%;
+      font-size: 30px;
+      @media (max-width: 468px) {
+        font-size: 24px;
+        line-height: 130%;
+      }
+    }
+    .Banner__description {
+      font-size: 15px;
+      font-weight: 400;
+      margin-top: 10px;
+      line-height: 22px;
+      color: #737473;
+      @media (max-width: 468px) {
+        font-size: 13px;
+        line-height: 18px;
+      }
+    }
+    .Banner__action {
+      margin-top: 15px;
+    }
+    @media (max-width: 468px) {
+      width: 100%;
+      padding: 100px 0;
+    }
+  }
+}

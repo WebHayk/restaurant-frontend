@@ -1,0 +1,26 @@
+@import "styles/utils/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: $c-primary;
+  user-select: none;
+  background: $c-background-gradient;
+  button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  @media (max-width: 468px) {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,50 @@
+@import "styles/utils/variables";
+@import "styles/utils/mixins";
+
+.NavItem {
+  margin-right: 5px;
+  @include HoverTransitionStyles;
+  .NavItem__icon {
+    @media (min-width: 650px) {
+      display: none;
+    }
+  }
+  .NavItem__renderer {
+    @media (max-width: 650px) {
+      @include FlexStyles(center, center);
+      flex-direction: column;
+    }
+    .NavItem__icon {
+      @media (min-width: 650px) {
+        display: none;
+      }
+    }
+  }
+  .NavItem__link {
+    cursor: pointer;
+    user-select: none;
+    color: $c-primary!important;
+    @include HoverTransitionStyles;
+    border-radius: 5px;
+    @media (min-width: 650px) {
+      &:hover {
+        background: $c-grey;
+      }
+      &:active {
+        background: #d6d6d6;
+      }
+      padding: 5px 10px;
+    }
+  }
+  @media (min-width: 650px) {
+    &:active {
+      @include PressedTransformStyles;
+    }
+  }
+  @media (max-width: 650px) {
+    width: 100%;
+    margin-right: 0px;
+    height: 100%;
+    @include FlexStyles(center, center);
+  }
+}
