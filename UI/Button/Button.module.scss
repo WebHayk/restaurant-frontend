@@ -17,6 +17,10 @@
   &:active {
     @include PressedTransformStyles;
   }
+  @media (max-width: 468px) {
+    font-size: 12px;
+    padding: 8px 17px;
+  }
 }
 
 .Button__black {
@@ -47,8 +51,14 @@
 
 .Button__large {
   height: 45px;
+  @media (max-width: 468px) {
+    height: 39px;
+  }
 }
 
 .Button__small {
   height: 40px;
+  @media (max-width: 468px) {
+    height: 35px;
+  }
 }

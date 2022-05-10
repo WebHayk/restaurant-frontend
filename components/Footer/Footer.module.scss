@@ -1,0 +1,45 @@
+@import "styles/utils/variables";
+@import "styles/utils/mixins";
+
+.Footer {
+  background: $c-emerald;
+  @include BaseContainerStyles;
+  .Footer__content {
+    padding: 50px 0;
+    @include FlexStyles(center, space-between);
+    .Footer__left {
+      .Footer__copyright {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 20px;
+        color: #737473;
+        @media (max-width: 468px) {
+          font-size: 11px;
+          margin-top: 10px;
+        }
+      }
+    }
+    .Footer__right {
+      display: flex;
+      align-items: center;
+      .Footer__text {
+        line-height: 22px;
+        color: #737473;
+        margin-right: 10px;
+      }
+      .Footer__contacts {
+        display: flex;
+        align-items: center;
+      }
+    }
+    @media (max-width: 650px) {
+      flex-direction: column-reverse;
+    }
+    @media (max-width: 468px) {
+      padding: 25px 0 55px 0;
+    }
+  }
+  @media (max-width: 650px) {
+    padding-bottom: 30px!important;
+  }
+}

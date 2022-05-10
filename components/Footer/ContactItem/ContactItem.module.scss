@@ -1,0 +1,25 @@
+@import "styles/utils/variables";
+@import "styles/utils/mixins";
+
+.ContactItem {
+  cursor: pointer;
+  margin-right: 3px;
+  @include HoverTransitionStyles;
+  border-radius: 50%;
+  @include FlexStyles(center, center);
+  padding: 5px;
+  @media (min-width: 650px) {
+    &:active {
+      @include PressedTransformStyles;
+    }
+    &:hover {
+      background: $c-grey;
+    }
+  }
+  img {
+    @media (max-width: 468px) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}

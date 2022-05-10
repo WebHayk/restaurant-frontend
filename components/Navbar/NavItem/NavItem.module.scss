@@ -25,7 +25,7 @@
     user-select: none;
     color: $c-primary!important;
     @include HoverTransitionStyles;
-    border-radius: 5px;
+    border-radius: 20px;
     @media (min-width: 650px) {
       &:hover {
         background: $c-grey;

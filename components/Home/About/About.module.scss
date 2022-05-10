@@ -1,0 +1,43 @@
+@import "styles/utils/mixins";
+
+.About {
+  @include BaseContainerStyles;
+  background: #fff;
+  .About__content {
+    @include SectionStyles;
+    @include FlexStyles(flex-start, space-between);
+    .About__left {
+      width: 100%;
+      margin-right: 30px;
+      max-width: 500px;
+      .About__title {
+        @include TitleStyles;
+      }
+      .About__description {
+        @include DescriptionStyles;
+        margin-bottom: 15px;
+      }
+      @media (max-width: 1250px) {
+        margin-right: 0;
+        margin-top: 20px;
+        max-width: 100%;
+      }
+      @media (max-width: 468px) {
+        margin-top: 12px;
+      }
+    }
+    .About__right {
+      img {
+        object-fit: cover;
+        border-radius: 20px;
+        @media (max-width: 650px) {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    @media (max-width: 1250px) {
+      flex-direction: column-reverse;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@import "styles/utils/mixins";
+@import "styles/utils/variables";
+
+.Product {
+  @include BaseContainerStyles;
+  margin: 75px auto auto auto;
+  .Product__content {
+    @include SectionStyles;
+    @include FlexStyles(flex-start, center);
+    flex-direction: column;
+  }
+  .Product__top {
+    width: 100%;
+    @include FlexStyles(flex-start, flex-start);
+    .Product__left {
+      .Product__image {
+        object-fit: cover;
+        width: 450px;
+        height: 300px;
+        border: 1px solid #E9E9E9;
+        border-radius: 10px;
+        @media (max-width: 1250px) {
+          width: 100%;
+        }
+        @media (max-width: 468px) {
+          height: 200px;
+        }
+        @media (max-width: 368px) {
+          height: 165px;
+        }
+      }
+      @media (max-width: 1250px) {
+        width: 100%;
+      }
+    }
+    .Product__right {
+      margin-left: 20px;
+      .Product__title {
+        color: $c-primary;
+        font-weight: 600;
+        font-size: 20px;
+      }
+      .Product__description {
+        max-width: 650px;
+        @include DescriptionStyles;
+      }
+      .Product__price {
+        color: $c-green;
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+      @media (max-width: 1250px) {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+    }
+    @media (max-width: 1250px) {
+      flex-direction: column;
+    }
+    @media (max-width: 520px) {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

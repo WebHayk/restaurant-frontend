@@ -7,6 +7,8 @@
 }
 
 html, body {
+  max-width: 1920px;
+  margin: 0 auto;
   width: 100%;
   min-height: 100%;
   font-family: "Poppins", sans-serif;
@@ -14,7 +16,6 @@ html, body {
   font-weight: 400;
   color: $c-primary;
   user-select: none;
-  background: $c-background-gradient;
   button {
     background: transparent;
     border: 0;

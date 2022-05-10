@@ -1,18 +1,33 @@
-import React, {FC, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import styles from "./Navbar.module.scss";
 import NavItem from "@components/Navbar/NavItem";
 import Image from "next/image";
 import Button from "@ui/Button";
 import LanguageDropdown from "@components/Navbar/LanguageDropdown";
 import TextField from "@ui/TextField";
+import cs from "classnames";
 
 export const Navbar: FC = () => {
 
+    let [scrollPosition, setScrollPosition] = useState<number>(0);
     let [state, setState] = useState({
         showSearch: false,
         showDropdown: false,
         query: ""
     });
+
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     const handleDropdownShow = () => setState({
         ...state,
@@ -36,7 +51,10 @@ export const Navbar: FC = () => {
     const contactAction = () => document.location.href = "tel:+375292771265";
 
     return (
-        <div className={styles.Navbar}>
+        <div className={cs({
+            [styles.Navbar]: true,
+            [styles.Navbar__scrolled]: scrollPosition > 50
+        })}>
             <div className={styles.Navbar__content}>
                 <div className={styles.Navbar__left}>
                     {
