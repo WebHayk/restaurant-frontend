@@ -1,0 +1,28 @@
+@import "styles/utils/variables";
+
+.Menu {
+  max-width: 250px;
+  width: 100%;
+  min-height: calc(100vh - 200px);
+  border: 1px $c-grey solid;
+  border-radius: 10px;
+  background: $c-silver;
+  .Menu__content {
+    padding: 25px 20px;
+    .Menu__top {
+      margin-bottom: 15px;
+      .Menu__title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .Menu__description {
+        color: $c-secondary;
+        font-size: 14px;
+        margin-top: 3px;
+      }
+    }
+  }
+  @media (max-width: 1250px) {
+    display: none;
+  }
+}

@@ -1,8 +1,7 @@
 import {FC} from "react";
-import styles from "./Product.module.scss";
-import OtherProducts from "./OtherProducts";
+import styles from "./ProductDetail.module.scss";
 
-export const Product: FC = () => {
+export const ProductDetail: FC = () => {
     return (
         <div className={styles.Product}>
             <div className={styles.Product__content}>
@@ -24,7 +23,6 @@ export const Product: FC = () => {
                         <p className={styles.Product__price}>1500 AMD</p>
                     </div>
                 </div>
-                <OtherProducts />
             </div>
         </div>
     )

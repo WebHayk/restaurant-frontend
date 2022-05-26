@@ -1,0 +1,15 @@
+@import "styles/utils/variables";
+@import "styles/utils/mixins";
+
+.MenuItem {
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  @include HoverTransitionStyles;
+  &:hover {
+    background: $c-grey;
+  }
+  &:active {
+    @include PressedTransformStyles;
+  }
+}

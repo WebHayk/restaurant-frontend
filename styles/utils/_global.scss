@@ -21,6 +21,9 @@ html, body {
     border: 0;
     cursor: pointer;
   }
+  ul {
+    list-style: none;
+  }
   @media (max-width: 468px) {
     font-size: 13px;
   }

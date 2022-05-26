@@ -1,0 +1,10 @@
+@import "styles/utils/mixins";
+
+.Products {
+  margin-top: 25px;
+  @include BaseContainerStyles;
+  .Products__content {
+    display: flex;
+    @include SectionStyles;
+  }
+}

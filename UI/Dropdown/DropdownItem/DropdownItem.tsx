@@ -5,17 +5,19 @@ import cs from "classnames";
 
 interface DropdownItem {
     icon?: string,
-    children: ReactChild
+    children: ReactChild,
+    onClick: any
 }
 
 export const DropdownItem: FC<DropdownItem> = (
     {
         icon,
-        children
+        children,
+        onClick
     }
 ) => {
     return (
-        <li className={styles.DropdownItem}>
+        <li onClick={onClick} className={styles.DropdownItem}>
             {
                 icon?.length
                 ?

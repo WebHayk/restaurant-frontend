@@ -6,7 +6,8 @@ interface Card {
     image: string,
     name: string,
     price: string,
-    classes?: any
+    classes?: any,
+    onClick: () => void
 }
 
 export const Card: FC<Card> = (
@@ -14,7 +15,8 @@ export const Card: FC<Card> = (
         image,
         name,
         price,
-        classes
+        classes,
+        onClick
     }
 ) => {
     return (
@@ -23,7 +25,9 @@ export const Card: FC<Card> = (
                 [styles.Card]: true,
                 [classes?.join(" ")]: classes?.length
             })
-        }>
+        }
+        onClick={onClick}
+        >
             <img
                 loading={"lazy"}
                 src={image}

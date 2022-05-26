@@ -1,0 +1,41 @@
+{
+  "navbar": {
+    "list": {
+      "home": "Home",
+      "menu": "Menu",
+      "about": "About us"
+    },
+    "languages": {
+      "hy": "Armenian",
+      "en": "English",
+      "ru": "Russian"
+    },
+    "contact": "Contact us",
+    "search": "Search.."
+  },
+  "home": {
+    "banner": {
+      "title": "Try delicious and healthy dishes in our restaurant",
+      "description": "Enjoy a healthy life by eating healthy foods that have extraordinary flavors that make your life healthier for today and in the future",
+      "action": "View menu"
+    },
+    "popular": {
+      "title": "Our Popular Menu",
+      "description": "Made with super ingredients",
+      "action": "View more"
+    },
+    "about": {
+      "title": "About us",
+      "content": "Our restaurant is dedicated to the safety of its customers and staff. We are following closely with the government's rules, regulations and advices in keeping the restaurant and environment safe and healthy. We feel a strong responsibility that the show must go on. Throughout our day we are constantly wiping down surfaces in between tasks with disinfectant cleaners. These food safe disinfectant cleaners ensure that all food surfaces are kept clean and germ free. In addition to all of our surfaces being wiped down.",
+      "action": "Learn more"
+    }
+  },
+  "products": {
+    "title": "Menu",
+    "description": "You can filter by category"
+  },
+  "footer": {
+    "copyright": "© COMPANY LLC 2022: All rights reserved",
+    "contact": "Contact with us"
+  }
+}

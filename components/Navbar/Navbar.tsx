@@ -6,13 +6,20 @@ import Button from "@ui/Button";
 import LanguageDropdown from "@components/Navbar/LanguageDropdown";
 import TextField from "@ui/TextField";
 import cs from "classnames";
+import {useMainSelector} from "@store/selectors";
 
 export const Navbar: FC = () => {
 
+    let reduxState = useMainSelector();
+    let {language} = reduxState;
+
+    let currentLanguageIcon = language == "en" ? "/usa-icon.svg" : language == "ru" ? "/russia-icon.svg" : "/armenia-icon.svg";
+
     let [scrollPosition, setScrollPosition] = useState<number>(0);
+    let [openLanguageDropdown, setOpenLanguageDropdown] = useState<boolean>(false);
+
     let [state, setState] = useState({
         showSearch: false,
-        showDropdown: false,
         query: ""
     });
 
@@ -29,10 +36,7 @@ export const Navbar: FC = () => {
         };
     }, []);
 
-    const handleDropdownShow = () => setState({
-        ...state,
-        showDropdown: !state.showDropdown
-    });
+    const handleDropdownShow = () => setOpenLanguageDropdown(!openLanguageDropdown);
 
     const handleSearchShow = () => setState({
         ...state,
@@ -65,19 +69,19 @@ export const Navbar: FC = () => {
                                 href={"/"}
                                 icon={"/home-icon.svg"}
                             >
-                                Home
+                                {reduxState.static?.navbar.list.home}
                             </NavItem>
                             <NavItem
-                                href={"/menu"}
+                                href={"/products"}
                                 icon={"/menu-icon.svg"}
                             >
-                                Menu
+                                {reduxState.static?.navbar.list.menu}
                             </NavItem>
                             <NavItem
                                 href={"/about"}
                                 icon={"/about-icon.svg"}
                             >
-                                About us
+                                {reduxState.static?.navbar.list.about}
                             </NavItem>
                         </ul>
                         :
@@ -87,7 +91,7 @@ export const Navbar: FC = () => {
                                 onChange={handleSearchChange}
                                 name={"search"}
                                 value={state.query}
-                                placeholder={"Search.."}
+                                placeholder={reduxState.static?.navbar.search}
                             />
                             <div onClick={handleSearchShow} className={styles.Navbar__close}>
                                 <Image
@@ -114,7 +118,7 @@ export const Navbar: FC = () => {
                          className={styles.Navbar__language}
                     >
                         <Image
-                            src={"/usa-icon.svg"}
+                            src={currentLanguageIcon}
                             alt={"flag-icon"}
                             width={25}
                             height={25}
@@ -126,10 +130,11 @@ export const Navbar: FC = () => {
                         variant={"small"}
                         type={"button"}
                     >
-                        Contact us
+                        {reduxState.static?.navbar.contact}
                     </Button>
                     <LanguageDropdown
-                        open={state.showDropdown}
+                        setOpen={setOpenLanguageDropdown}
+                        open={openLanguageDropdown}
                     />
                 </div>
             </div>

@@ -8,7 +8,10 @@
       "@styles/*": ["styles/*"],
       "@ui/*": ["UI/*"],
       "@context/*": ["context/*"],
-      "@layouts/*": ["layouts/*"]
+      "@layouts/*": ["layouts/*"],
+      "@hoc/*": ["hoc/*"],
+      "@hooks/*": ["hooks/*"],
+      "@common/*": ["common/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
